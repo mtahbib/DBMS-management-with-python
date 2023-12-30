@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee Data</title>
+</head>
+<body>
+    <h1>Update Employee Data</h1>
+    
+    <form action="/update/{{ employee[0] }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ employee[1] }}" required>
+        <label for="emp_id">Employee ID:</label>
+        <input type="number" name="emp_id" value="{{ employee[2] }}" required>
+        <label for="designation">Designation:</label>
+        <input type="text" name="designation" value="{{ employee[3] }}" required>
+        <!-- New fields -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ employee[4] }}" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="{{ employee[5] }}" required>
+        <!-- End of new fields -->
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="/delete/{{ employee[0] }}" method="post">
+        <button type="submit" class="text-red-500">Delete</button>
+    </form>
+</body>
+</html>
