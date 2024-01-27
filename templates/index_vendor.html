@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Management</title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-100 text-blue-800 p-4">
+        <div class="flex items-center justify-between">
+    
+            <!-- Logo on the left -->
+            <div class="flex items-center">
+               <a href="index.html"> <img src="https://dhakabankltd.com/wp-content/themes/dhakabankupdate/images/dbl-plc-logo.png" alt="Logo" class="h-8 mr-2"></a>
+             </div>
+             <a href="#" class="text-lg font-extrabold">VENDOR MANAGEMENT</a>
+             
+            <!-- Navigation links on the right -->
+            <div class="flex items-center">
+                <a href="index.html" class="mr-4">Home</a>
+                <a href="about.html" class="mr-4">About</a>
+                <a href="contact.html" class="mr-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mx-auto my-8 p-8 bg-white rounded shadow">
+        <h2 class="text-2xl font-semibold mb-4">Add Vendor</h2>
+        <form action="/save_vendor" method="post" class="mb-8 flex gap-4">
+            <div class="mb-4">
+                <label for="name" class="block font-bold text-gray-700">Vendor Name</label>
+                <input type="text" id="name" name="name" placeholder="Vendor Name" required class="mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+                <label for="vendor_number" class="block font-bold text-gray-700">Vendor ID</label>
+                <input type="text" id="vendor_number" name="vendor_number" placeholder="Vendor ID" required class="mt-1 p-2 border rounded w-full">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block font-bold text-gray-700">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required class="mt-1 p-2 border rounded w-full">
+            </div>
+            
+            <div class="mb-4">
+                <label for="contact" class="block font-bold text-gray-700">Contact</label>
+                <input type="text" id="contact" name="contact" placeholder="Contact" required class="mt-1 p-2 border rounded w-full">
+            </div>
+            
+            <div class="mb-4">
+                <label for="service_type" class="block font-bold text-gray-700">Service Type</label>
+                <input type="text" id="service_type" name="service_type" placeholder="Service Type" required class="mt-1 p-2 border rounded w-full">
+            </div>
+            
+           
+              
+               <button type="submit" class="bg-blue-400 text-white p-2 rounded self-start md:self-center">Add Vendor</button>
+            
+            
+        </form>
+
+    
+
+        <h2 class="text-2xl font-semibold mb-4">Vendor List</h2>
+        <table class="w-full border-collapse border border-gray-300">
+            <thead class="bg-blue-300">
+                <tr>
+                    <th class="border border-blue-400 p-2">SL.</th>
+                    <th class="border border-blue-400 p-2">Name</th>
+                    <th class="border border-blue-400 p-2">Vendor ID</th> 
+                    <th class="border border-blue-400 p-2">Email</th>
+                    <th class="border border-blue-400 p-2">Contact</th>
+                    <th class="border border-blue-400 p-2">Service Type</th>
+                    <th class="border border-gray-400 p-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vendor in vendors %}
+                <tr>
+                    <td class="border border-gray-300 p-2">{{ vendor[0] }}</td>
+                    <td class="border border-gray-300 p-2"><input id="name_input_{{ vendor[0] }}" type="text" value="{{ vendor[1] }}"></td>
+                    <td class="border border-gray-300 p-2"><input id="vendor_number_input_{{ vendor[0] }}" type="text" value="{{ vendor[5] }}"></td>
+                    <td class="border border-gray-300 p-2"><input id="email_input_{{ vendor[0] }}" type="email" value="{{ vendor[2] }}"></td>
+                    <td class="border border-gray-300 p-2"><input id="contact_input_{{ vendor[0] }}" type="text" value="{{ vendor[3] }}"></td>
+                    <td class="border border-gray-300 p-2"><input id="service_type_input_{{ vendor[0] }}" type="text" value="{{ vendor[4] }}"></td>
+                   
+                    <td class="border border-gray-300 p-2">
+                        <button onclick="updateVendor({{ vendor[0] }})" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-all duration-200 ease-in-out">Update</button>
+                        <button onclick="deleteVendor({{ vendor[0] }})" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition-all duration-200 ease-in-out">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+</div>
+<footer class="bg-gray-200 text-gray-700 text-center py-4">
+    <p class="text-sm">&copy; 2023 Dhaka Bank. All rights reserved. 
+        Made By <a href="https://www.github.com/mtahbib"><span class="animate-pulse text-blue-500 font-extrabold">Tahbib Manzoor</span></a>
+            </p>
+</footer>
+
+
+
+
+
+    <script>
+      function updateVendor(vendorId) {
+    var name = document.getElementById('name_input_' + vendorId).value;
+    var email = document.getElementById('email_input_' + vendorId).value;
+    var contact = document.getElementById('contact_input_' + vendorId).value;
+    var serviceType = document.getElementById('service_type_input_' + vendorId).value;
+    var vendorNumber = document.getElementById('vendor_number_input_' + vendorId).value; // Add this line
+
+    fetch(`/update_vendor/${vendorId}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ 
+            name: name,
+            email: email,
+            contact: contact,
+            service_type: serviceType,
+            vendor_number: vendorNumber // Add this field
+        }), 
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
+
+        function updateField(vendorId, fieldName) {
+            var inputField = document.getElementById(fieldName + '_input_' + vendorId);
+            var newValue = inputField.value;
+            fetch(`/update_vendor_field/${vendorId}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ field: fieldName, value: newValue }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        }
+
+        function deleteVendor(vendorId) {
+            if (confirm('Are you sure you want to delete this vendor?')) {
+                fetch(`/delete_vendor/${vendorId}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => location.reload())
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+</body>
+
+</html>

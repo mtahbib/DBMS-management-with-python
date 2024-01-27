@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Planning</title>
+</head>
+<body>
+    <h1>Edit Planning</h1>
+
+    <form action="/update_planning/{{ planning_id }}" method="post">
+        <input type="hidden" name="planning_id" value="{{ planning_id }}">
+        <input type="date" name="start_date" value="{{ planning_start_date }}">
+        <input type="date" name="end_date" value="{{ planning_end_date }}">
+        <input type="text" name="key_deliveries" value="{{ planning_key_deliveries }}">
+        <button type="submit">Update Planning</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... [head content] ... -->
+    <title>Update Vendor Data</title>
+</head>
+<body>
+    <h1>Update Vendor Data</h1>
+
+    <form action="/update_vendor/{{ vendor[0] }}" method="post">
+        
+        <input type="hidden" name="vendor_id" value="{{ vendor[0] }}">
+
+        <input type="text" name="name" value="{{ vendor[1] }}" required>
+        <input type="email" name="email" value="{{ vendor[2] }}" required>
+        <input type="text" name="contact" value="{{ vendor[3] }}" required>
+        <input type="text" name="vendor_number" value="{{ vendor[4] }}" required>
+        <input type="text" name="service_type" value="{{ vendor[5] }}" required>
+        
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

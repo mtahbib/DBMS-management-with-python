@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... [head content] ... -->
+    <title>Update Project Initiator Data</title>
+</head>
+<body>
+    <h1>Update Project Initiator Data</h1>
+
+    <form action="/update_initiator/{{ initiator[0] }}" method="post">
+        <!-- ... [input fields for updating project initiator] ... -->
+        <input type="hidden" name="initiator_id" value="{{ initiator[0] }}">
+        <input type="text" name="project_number" value="{{ initiator[1] }}" required>
+        <input type="text" name="name" value="{{ initiator[2] }}" required>
+        <input type="date" name="date" value="{{ initiator[3] }}" required>
+        <input type="text" name="ownership" value="{{ initiator[4] }}" required>
+        <input type="text" name="description" value="{{ initiator[5] }}" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

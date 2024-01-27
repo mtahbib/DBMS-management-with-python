@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Update Material</title>
+</head>
+<body class="font-sans bg-gray-100">
+    <div class="container mx-auto my-8 p-8 bg-white rounded shadow">
+        <h1 class="text-3xl font-semibold mb-4">Update Material</h1>
+        <form action="/update_material/{{ material[0] }}" method="post">
+            <input type="text" name="disk" value="{{ material[1] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="ram" value="{{ material[2] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="os" value="{{ material[3] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="date" name="assigned_date" value="{{ material[4] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="date" name="completed_date" value="{{ material[5] }}" required class="mt-1 p-2 border rounded w-full">
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Update Material</button>
+        </form>
+    </div>
+</body>
+</html>

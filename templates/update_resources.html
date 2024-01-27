@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Update Resource</title>
+</head>
+<body class="font-sans bg-gray-100">
+    <div class="container mx-auto my-8 p-8 bg-white rounded shadow">
+        <h1 class="text-3xl font-semibold mb-4">Update Resource</h1>
+        <h2 class="text-xl mb-2">Leader ID: {{ leader_data[0] }}</h2> <!-- Display the leader's ID here -->
+        <form action="/update_resource/{{ resource[0] }}" method="post">
+            <input type="hidden" name="original_resource_id" value="{{ resource[0] }}">
+            <input type="text" name="resource_id" value="{{ resource[1] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="name" value="{{ leader_data[0] }} - {{ resource[2] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="team" value="{{ resource[3] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="material" value="{{ resource[4] }}" required class="mt-1 p-2 border rounded w-full">
+            <input type="text" name="leader_id" value="{{ resource[5] }}" required class="mt-1 p-2 border rounded w-full">
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Update Resource</button>
+        </form>
+    </div>
+</body>
+</html>

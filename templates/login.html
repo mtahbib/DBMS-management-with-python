@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-100 text-blue-800 p-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo on the left -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="https://dhakabankltd.com/wp-content/themes/dhakabankupdate/images/dbl-plc-logo.png" alt="Logo" class="h-8 mr-2">
+                </a>
+            </div>
+            <a href="#" class="text-lg font-extrabold">WELCOME TO DHAKA BANK PLC</a>
+            <!-- Navigation links on the right -->
+            <div class="flex items-center">
+                <a href="index.html" class="mr-4">Home</a>
+                <a href="about.html" class="mr-4">About</a>
+                <a href="contact.html" class="mr-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="flex-grow flex items-center justify-center">
+        <div class="bg-blue-200 p-8 rounded shadow-md w-96">
+            <h1 class="text-2xl font-semibold mb-6">Login</h1>
+            <form method="POST" action="/login">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username:</label>
+                    <input type="text" id="username" name="username" required
+                        class="mt-1 p-2 block w-full border border-gray-300 rounded-md transition duration-300 focus:outline-none focus:ring focus:ring-blue-200">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+                    <input type="password" id="password" name="password" required
+                        class="mt-1 p-2 block w-full border border-gray-300 rounded-md transition duration-300 focus:outline-none focus:ring focus:ring-blue-200">
+                </div>
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full bg-blue-500 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <p class="mt-4">Don't have an account? <a href="/register" class="text-blue-500 hover:underline">Register</a></p>
+        </div>
+    </div>
+    <footer class="bg-gray-200 text-gray-700 text-center py-4">
+   <p class="text-sm">&copy; 2023 Dhaka Bank. All rights reserved. 
+     Made By <a href="https://www.github.com/mtahbib"><span class="animate-pulse text-blue-500 font-extrabold">Tahbib Manzoor</span></a>
+         </p>
+    </footer>
+</body>
+</html>

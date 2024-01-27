@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS_IRIN</title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+            
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen ">
+    <!-- Navbar -->
+    <nav class="bg-blue-100 text-blue-800 p-4">
+        <div class="flex items-center justify-between">
+    
+            <!-- Logo on the left -->
+            <div class="flex items-center">
+               <a href="index.html"> <img src="https://dhakabankltd.com/wp-content/themes/dhakabankupdate/images/dbl-plc-logo.png" alt="Logo" class="h-8 mr-2"></a>
+             </div>
+             <a href="#" class="text-lg font-extrabold"></a>
+             
+            <!-- Navigation links on the right -->
+            <div class="flex items-center">
+                <a href="index.html" class="mr-4">Home</a>
+                <a href="about.html" class="mr-4">About</a>
+                <a href="contact.html" class="mr-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <style>
+        /* Custom hover effect */
+        .hover-effect:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-blue-500 text-white flex flex-col items-center justify-center min-h-screen">
+    <div class="container mx-auto p-10 bg-gray-100 rounded shadow-lg">
+        <h2 class="text-4xl font-bold text-center animate-pulse text-blue-500 font-extrabold ">PROJECT MANAGEMENT SYSTEM</h2>
+    
+    <div class="container mx-auto p-3 bg-white rounded shadow-lg mt-44">
+       
+        <h1 class="text-4xl font-bold mb-6"></h1>
+        
+        <h2 class="text-2xl font-semibold mb-4"> All List</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="/employees" class="block p-6 bg-orange-200 rounded-lg border border-orange-300 hover:bg-orange-300 hover-effect transition duration-300 ease-in-out">Employee Management</a>
+            <a href="/vendor" class="block p-6 bg-violet-200 rounded-lg border border-violet-300 hover:bg-violet-300 hover-effect transition duration-300 ease-in-out">Vendor Management</a>
+            <a href="/initiator" class="block p-6 bg-green-200 rounded-lg border border-green-300 hover:bg-green-300 hover-effect transition duration-300 ease-in-out">Project Initiation</a>
+            <a href="/planning" class="block p-6 bg-purple-200 rounded-lg border border-purple-300 hover:bg-purple-300 hover-effect transition duration-300 ease-in-out">Project Planning</a>
+            <a href="/resources" class="block p-6 bg-blue-200 rounded-lg border border-blue-300 hover:bg-blue-300 hover-effect transition duration-300 ease-in-out">Resource Management</a>
+            <a href="/materials" class="block p-6 bg-red-200 rounded-lg border border-red-300 hover:bg-red-300 hover-effect transition duration-300 ease-in-out">Material Management</a>
+
+
+        </div>
+    </div>
+    <footer class="bg-gray-200 text-gray-700 text-center py-4">
+      <p class="text-sm">&copy; 2023 Dhaka Bank. All rights reserved. 
+             Made By <a href="https://www.github.com/mtahbib"><span class="animate-pulse text-blue-500 font-extrabold">Tahbib Manzoor</span></a>
+          </p>
+    </footer>
+</body>
+</html>
